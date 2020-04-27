@@ -1,0 +1,5 @@
+- name: start all ndoes
+  shell: nohup ./gaiad start > nohup.log 2>&1 &
+  async: 5
+  args:
+    chdir: "{{gaia_home}}"

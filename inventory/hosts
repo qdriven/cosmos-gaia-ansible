@@ -1,0 +1,6 @@
+[gaia-servers]
+# perf-s01 ansible_host=172.168.3.93 ansible_ssh_user=ubuntu ansible_ssh_pass=ORK7oBtr index=100
+perf-s02 ansible_host=172.168.3.94 ansible_ssh_user=ubuntu ansible_ssh_pass=ORK7oBtr index=0
+perf-s03 ansible_host=172.168.3.95 ansible_ssh_user=ubuntu ansible_ssh_pass=ORK7oBtr index=1
+perf-s04 ansible_host=172.168.3.96 ansible_ssh_user=ubuntu ansible_ssh_pass=ORK7oBtr index=2
+perf-s05 ansible_host=172.168.3.97 ansible_ssh_user=ubuntu ansible_ssh_pass=ORK7oBtr index=3

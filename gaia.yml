@@ -1,0 +1,10 @@
+---
+
+- hosts: gaia-servers
+  any_errors_fatal: true
+  become: yes
+  vars:
+    - gaia_home: /data/gaia
+    - hosts_name: gaia-servers
+  roles:
+    - gaia

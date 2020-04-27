@@ -1,0 +1,23 @@
+- name: debug index
+  shell: echo "{{ansible_play_hosts.index(inventory_hostname)}}"
+  register: nodeId
+  with_items: "groups['gaia-servers']"
+- name: setup nodeId
+  shell: "echo {{ansible_play_hosts.index(inventory_hostname)}} > /etc/nodeid"
+
+- name: copy gaia,gaiacli
+  copy:
+    src: ../files/{{item}}
+    dest: "{{gaia_home}}"
+  with_items:
+    - gaiad
+    - gaiacli
+    - gaia_config.sh
+- name: copy mytestnet configuration
+  unarchive:
+    src: ../files/testnetconfig.tar
+    dest: "{{gaia_home}}"
+- name: setup node configuration
+  shell: sh gaia_config.sh
+  args:
+    chdir: "{{gaia_home}}"

@@ -1,0 +1,4 @@
+- name:
+  shell: rm -rf .gaiad ; rm -rf .gaiacli
+  args:
+    chdir: "{{gaia_home}}"
