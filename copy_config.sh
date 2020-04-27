@@ -1,6 +1,6 @@
-chmod +x genereate_config.sh
-cp genereate_config.sh ../
+chmod +x generate_config.sh
+cp generate_config.sh ../
 cd ../
-./genereate_config
+./generate_config.sh
 tar czvf testnetconfig.tar mytestnet/
-cp testnetconfig.tar roles/gaia/files/
+cp -f testnetconfig.tar gaia-ansible/roles/gaia/files/
