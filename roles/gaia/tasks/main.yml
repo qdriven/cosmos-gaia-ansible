@@ -2,8 +2,10 @@
   shell: echo "{{ansible_play_hosts.index(inventory_hostname)}}"
   register: nodeId
   with_items: "groups['gaia-servers']"
+  
 - name: setup nodeId
   shell: "echo {{ansible_play_hosts.index(inventory_hostname)}} > /etc/nodeid"
+  with_items: "groups['gaia-servers']"
 
 - name: copy gaia,gaiacli
   copy:
